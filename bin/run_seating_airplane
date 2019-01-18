@@ -1,0 +1,44 @@
+#!/usr/bin/env ruby
+require 'json'
+require_relative '../lib/seating_airplane'
+
+def process!(input)
+  if input.length != 0
+    input = File.read(input[0])
+    input = input.split("\n") # input in array
+    input_type = 'file'
+  else
+    input_type = 'interactive'
+  end
+
+  count = 0 # variable is only for file input
+  loop do
+    case input_type
+      when 'file'
+        break if count >= input.size
+        input_row = input[count]
+        count += 1
+      when 'interactive'
+        input_row = gets.chomp # take input from command line until 'q'
+        break if input_row == 'q'
+    end
+    input_row = input_row.delete(' ')
+    input_row_scliced = input_row.split(']]')
+    seat_layout = JSON.parse input_row_scliced[0] + "]]"
+    number_of_passengers = input_row_scliced[1].strip.to_i
+    sa = SeatingAirplane.new(seat_layout, number_of_passengers)
+    sa.print_layout
+    sa.allot!
+    sa.print_layout
+  end
+end
+
+def run
+  begin
+    process!(ARGV)
+  rescue StandardError => e
+    puts "Input Error - #{e}"
+  end
+end
+
+run

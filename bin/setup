@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+root_dir = File.dirname(File.expand_path('..', __FILE__))
+command = "cd #{root_dir}; bundle install"
+puts command
+system command

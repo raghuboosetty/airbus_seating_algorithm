@@ -1,0 +1,11 @@
+example_id                               | status | run_time        |
+---------------------------------------- | ------ | --------------- |
+./spec/end_to_end_spec.rb[1:1]           | passed | 0.01201 seconds |
+./spec/end_to_end_spec.rb[1:2:1]         | passed | 0.20847 seconds |
+./spec/end_to_end_spec.rb[1:2:2]         | passed | 1.12 seconds    |
+./spec/seating_airplane_spec.rb[1:1:1:1] | passed | 0.00661 seconds |
+./spec/seating_airplane_spec.rb[1:1:2:1] | passed | 0.00556 seconds |
+./spec/seating_airplane_spec.rb[1:2:1:1] | passed | 0.00547 seconds |
+./spec/seating_airplane_spec.rb[1:3:1:1] | passed | 0.00467 seconds |
+./spec/seating_airplane_spec.rb[1:4:1:1] | passed | 0.00474 seconds |
+./spec/seating_airplane_spec.rb[1:5:1:1] | passed | 0.00557 seconds |
